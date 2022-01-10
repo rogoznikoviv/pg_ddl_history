@@ -6,7 +6,8 @@ create table public.ddl_history (
 	objid	oid,
 	object_type	varchar(64),
 	object_identity	text,
-	ddl	text);
+	ddl	text,
+	ts timestamp not null default now());
 
 -- drop event_trigger_ddl_commands;
 create or replace function event_trigger_ddl_commands() returns event_trigger as $$
